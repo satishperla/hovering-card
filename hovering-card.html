@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled hovered Profile Card</title>
+    <style>
+        *{
+            padding:0;
+            margin: 0;
+        }
+        .card-container {
+            border: 2px solid;
+            width: 300px;
+            margin: 100px;
+            overflow: hidden;
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+        .profile-image {
+            width: 100px;
+            height: 100px;
+        }
+        .skills {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+        .card-container:before,
+        .card-container:after{
+            position:absolute;
+            content:'';
+            width:100%;
+            height:100%;
+            z-index:5;
+        }
+        .card-container:before{
+            top:-110%;
+            background-color: #e04e01;
+            transition:top .3s;
+        }
+        .card-container:after{
+            bottom:-110%;
+            background-color: #359bd6;
+            transition: bottom .3s;
+        }
+        .card-container:hover::before{
+            top:-50%;
+        }
+        .card-container:hover::after{
+            bottom:-50%;
+        }
+        .card-container:hover {
+            z-index: 10;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .profile {
+            text-align: center;
+            position: relative;
+        }
+        .all-languages {
+            text-align: center;
+        }
+        .profile-image {
+            position: absolute;
+            left:50%;
+            width: 120px;
+            height: 120px;
+            transform:translate(-50%,-50%);
+            transition: z-index .9s;
+            z-index:6;
+            bottom: -200px;
+        }
+      
+        .data {
+            position: absolute;
+            right: 30%;
+            top: 35%;
+            margin-top: 50px;
+            z-index: 10;
+        }
+        </style>
+    </head>
+    <body>
+        <div class='card-container'>
+            <div class='profile'>
+                <img  class ='profile-image ' src='icon.png' width="150" height="150">
+            </div>
+            <div class="data">
+                <h4>Satish Kumar Perla</h4><br>
+                <b class="skills">Languages known</b>
+                
+                <div class='all-languages'>
+                    <span class="skills">C</span>&nbsp;
+                    <span class="skills">Python</span>&nbsp;
+                    <span class="skills">JavaScript</span>&nbsp;
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
